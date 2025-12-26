@@ -1,25 +1,27 @@
 ---
 name: calculator-skill
-description: Perform mathematical calculations including basic arithmetic, advanced operations, and expression evaluation. Use when the user needs to calculate numbers, solve math problems, or evaluate mathematical expressions.
+description: "Mathematical calculation skill for computing arithmetic expressions, trigonometry, logarithms, and complex math. Use EXCLUSIVELY for math calculations: sin, cos, tan, sqrt, log, exponents, etc."
 license: MIT
 metadata:
   author: example-author
   version: "1.0.0"
-allowed-tools: Bash(python:scripts/calculate.py)
+allowed-tools:
+  - Bash
 ---
 
 # Calculator Skill
 
-A comprehensive calculator skill that performs various mathematical operations through a Python script.
+A specialized mathematical calculator skill for computing arithmetic expressions, trigonometric functions, logarithms, and advanced math operations.
 
-## When to Use This Skill
+## ⚠️ IMPORTANT: Use This Skill For Math Calculations ONLY
 
-Use this skill when:
+This skill is designed **EXCLUSIVELY** for mathematical calculations. Use it when:
 - The user asks to calculate or compute mathematical expressions
-- Basic arithmetic is needed (addition, subtraction, multiplication, division)
-- Advanced operations are required (exponents, square roots, logarithms)
+- Trigonometric operations are needed (sin, cos, tan, radians, degrees)
+- Basic arithmetic is required (addition, subtraction, multiplication, division)
+- Advanced operations are needed (exponents, square roots, logarithms)
 - Complex expressions need to be evaluated
-- The user mentions math, calculations, or numbers that need processing
+- Keywords: calculate, compute, math, trigonometry, sin, cos, tan, sqrt, log, radians
 
 ## Supported Operations
 
@@ -29,10 +31,16 @@ Use this skill when:
 - Multiplication: `6 * 7`
 - Division: `20 / 4`
 
+### Trigonometric Functions ⭐
+- `sin(x)` - Sine of x (x in radians)
+- `cos(x)` - Cosine of x (x in radians)
+- `tan(x)` - Tangent of x (x in radians)
+- `radians(x)` - Convert degrees to radians
+- `degrees(x)` - Convert radians to degrees
+
 ### Advanced Operations
 - Exponentiation: `2 ** 8` (2 to the power of 8)
 - Square root: `sqrt(16)`
-- Trigonometry: `sin(0)`, `cos(0)`, `tan(45)`
 - Logarithms: `log(100)`, `log10(100)`
 - Absolute value: `abs(-5)`
 
@@ -55,6 +63,18 @@ python scripts/calculate.py "expression"
 ```
 
 ## Quick Examples
+
+### Trigonometry (This Skill's Specialty!) ⭐
+```bash
+python scripts/calculate.py "sin(radians(30))"
+# Result: 0.5
+
+python scripts/calculate.py "cos(0)"
+# Result: 1.0
+
+python scripts/calculate.py "tan(radians(45))"
+# Result: 1.0
+```
 
 ### Basic Calculation
 ```bash
